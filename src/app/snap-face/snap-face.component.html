@@ -3,5 +3,7 @@
     <p>Mis en ligne le {{ createdDate }}</p>
     <img [src]="imageUrl" [alt]="title">
     <p>{{ description }}</p>
-    <p>Likes : {{ snaps }}</p>
+    <p>
+        <button (click)="onAddLike()">J'aime !</button>
+        Likes : {{ snaps }}</p>
   </div>
