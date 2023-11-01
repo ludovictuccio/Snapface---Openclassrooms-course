@@ -11,6 +11,8 @@ export class SnapFaceComponent implements OnInit {
   createdDate!:Date;
   snaps!:number;
   imageUrl!:string;
+  isAlreadySnapped!:boolean;
+  statusSnap!:string;
 
   ngOnInit(): void {
     this.title='un titre';
@@ -18,9 +20,16 @@ export class SnapFaceComponent implements OnInit {
     this.createdDate=new Date();
     this.snaps=6;
     this.imageUrl = 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
+    this.isAlreadySnapped=false;
+    this.statusSnap='I like !';
   }
 
   onAddLike(){
-    this.snaps++;
+    if (!this.isAlreadySnapped) {
+      this.snaps++;
+      this.isAlreadySnapped=true;
+    } else {
+      this.statusSnap='Oops, un like max!';
+    }
   }
 }

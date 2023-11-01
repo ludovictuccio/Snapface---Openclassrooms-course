@@ -4,6 +4,6 @@
     <img [src]="imageUrl" [alt]="title">
     <p>{{ description }}</p>
     <p>
-        <button (click)="onAddLike()">J'aime !</button>
+        <button (click)="onAddLike()" >{{ statusSnap }}</button>
         Likes : {{ snaps }}</p>
   </div>
