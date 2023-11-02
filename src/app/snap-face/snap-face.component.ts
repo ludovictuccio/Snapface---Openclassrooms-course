@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import { SnapFace } from '../models/snap-face.model';
 
 @Component({
   selector: 'app-snap-face',
@@ -6,30 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./snap-face.component.css']
 })
 export class SnapFaceComponent implements OnInit {
-  title!:string;
-  description!:string;
-  createdDate!:Date;
-  snaps!:number;
-  imageUrl!:string;
-  isAlreadySnapped!:boolean;
-  statusSnap!:string;
+  
+  @Input() snapFace!:SnapFace;
 
-  ngOnInit(): void {
-    this.title='un titre';
-    this.description='une description';
-    this.createdDate=new Date();
-    this.snaps=6;
-    this.imageUrl = 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
-    this.isAlreadySnapped=false;
-    this.statusSnap='I like !';
+  ngOnInit() {
   }
 
   onAddLike(){
-    if (!this.isAlreadySnapped) {
-      this.snaps++;
-      this.isAlreadySnapped=true;
+
+    if (!this.snapFace.isAlreadySnapped) {
+      this.snapFace.snaps++;
+      this.snapFace.isAlreadySnapped=true;
     } else {
-      this.statusSnap='Oops, un like max!';
+      this.snapFace.snaps--;
+      this.snapFace.statusSnap='Oops, un like max!';
+      this.snapFace.isAlreadySnapped=false;
     }
   }
 }
