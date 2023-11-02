@@ -3,6 +3,7 @@
     <p>Mis en ligne le {{ snapFace.createdDate }}</p>
     <img [src]="snapFace.imageUrl" [alt]="snapFace.title">
     <p>{{ snapFace.description }}</p>
+    <p *ngIf="snapFace.location">Photo prise à {{ snapFace.location }}</p>
     <p>
         <button (click)="onAddLike()" >{{ snapFace.statusSnap }}</button>
         Likes : {{ snapFace.snaps }}</p>

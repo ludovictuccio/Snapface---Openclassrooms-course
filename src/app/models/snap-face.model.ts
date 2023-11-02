@@ -1,11 +1,14 @@
 export class SnapFace{
 
-    constructor(public  title:string,
-        public description:string,
-        public createdDate:Date,
-        public  snaps:number,
-        public imageUrl:string,
-        public isAlreadySnapped:boolean,
-        public statusSnap:string ){
-    }
+         title!:string;
+         description!:string;
+         createdDate!:Date;
+         snaps!:number;
+         imageUrl!:string;
+         isAlreadySnapped!:boolean;
+         statusSnap!:string;
+         location?:string ;
+
+  
+
 }
