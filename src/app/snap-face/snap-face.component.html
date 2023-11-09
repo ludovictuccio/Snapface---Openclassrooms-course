@@ -6,5 +6,6 @@
     <p *ngIf="snapFace.location">Photo prise à {{ snapFace.location }}</p>
     <p>
         <button (click)="onAddLike()" >{{ snapFace.statusSnap }}</button>
-        Likes : {{ snapFace.snaps }}</p>
+        <span [ngStyle]="{ color: 'rgb(0, ' + snapFace.snaps + ', 0)' }">Likes : {{ snapFace.snaps }}</span>
+    </p>
   </div>
