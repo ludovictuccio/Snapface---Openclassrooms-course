@@ -1,5 +1,5 @@
 <div class="face-snap-card" [ngClass]="{snapped: snapFace.statusSnap === 'Oops, un like max!'}">
-    <h2>{{ snapFace.title }}</h2>
+    <h2>{{ snapFace.title | titlecase}}</h2>
     <p>Mis en ligne le {{ snapFace.createdDate }}</p>
     <img [src]="snapFace.imageUrl" [alt]="snapFace.title">
     <p>{{ snapFace.description }}</p>
