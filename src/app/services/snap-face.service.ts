@@ -39,7 +39,9 @@ export class SnapFaceService {
       
         ];
       
-        
+        getAllFaceSnaps(): SnapFace[] {
+            return this.snapFaces;
+        }
     
 
 }

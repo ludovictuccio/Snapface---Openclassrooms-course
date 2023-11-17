@@ -15,7 +15,7 @@ export class SnapFaceListComponent implements OnInit {
   
   ngOnInit() {
 
-    this.snapFaces = this.snapFaceService.snapFaces;
+    this.snapFaces = this.snapFaceService.getAllFaceSnaps();
   
   }
 }
