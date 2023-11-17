@@ -19,12 +19,10 @@ export class SnapFaceComponent implements OnInit {
   onAddLike(){
 
     if (!this.snapFace.isAlreadySnapped) {
-      this.snapFaceService.snapFaceById(this.snapFace.id);
-      this.snapFace.snaps++;
+      this.snapFaceService.snapFaceById(this.snapFace.id, 'snap');
       this.snapFace.isAlreadySnapped=true;
     } else {
-      this.snapFaceService.snapFaceByIdNotfound(this.snapFace.id);
-      this.snapFace.snaps--;
+      this.snapFaceService.snapFaceById(this.snapFace.id, 'unsnap');
       this.snapFace.statusSnap='Oops, un like max!';
       this.snapFace.isAlreadySnapped=false;
     }
