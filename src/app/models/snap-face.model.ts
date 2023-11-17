@@ -1,5 +1,5 @@
 export class SnapFace{
-
+        id!:number;
          title!:string;
          description!:string;
          createdDate!:Date;
